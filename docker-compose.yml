@@ -2,20 +2,38 @@ version: '3.7'
 
 services:
   mysql:
-     image: mysql:latest
-     ports:
-       - '3306:3306'
-     volumes:
-       - ./data:/var/lib/mysql
-     environment:
-       - MYSQL_RANDOM_ROOT_PASSWORD=yes
-       - MYSQL_DATABASE=app
-       - MYSQL_USER=app
-       - MYSQL_PASSWORD=pass
-
-
-
-
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=pass
+  postgres:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data:/var/lib/postgresql
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: pass
+  node-app:
+    image: node:16-alpine
+    ports:
+      - '9999:9999'
+    volumes:
+      - ./data:/var/lib/node-app
+    command: ["npm", "start"]
+    environment:
+        MYSQL_HOST: mysql
+        MYSQL_USER: app
+        MYSQL_PASSWORD: pass
+        MYSQL_DB: db
 
 
 

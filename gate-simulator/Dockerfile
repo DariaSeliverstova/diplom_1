@@ -5,6 +5,6 @@ WORKDIR /app
 COPY package.json /app
 
 RUN npm install
-COPY .. /app
+COPY . .
 EXPOSE 9999
 CMD ["npm", "start"]
