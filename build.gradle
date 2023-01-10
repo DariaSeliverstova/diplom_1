@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.10.0'
 }
 
 group 'ru.netology'
@@ -9,12 +10,38 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
+allure {
+    version = '2.19.0'
+    useJUnit5 {
+        version = '2.19.0'
+    }
+}
+
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testImplementation 'mysql:mysql-connector-java:8.0.30'
+    testImplementation 'org.postgresql:postgresql:42.5.0'
+
+    testImplementation 'com.codeborne:selenide:6.7.4'
+
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+
+    testImplementation 'io.qameta.allure:allure-selenide:2.19.0'
+
     implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation 'org.slf4j:slf4j-simple:1.7.36'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
@@ -32,4 +59,9 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'dbUrl', System.getProperty('dbUrl')
+    systemProperty 'dbUser', System.getProperty('dbUser')
+    systemProperty 'dbPass', System.getProperty('dbPass')
 }

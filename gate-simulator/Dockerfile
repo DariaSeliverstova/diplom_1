@@ -1,10 +1,7 @@
 FROM node:16-alpine
 
-RUN mkdir /app
-WORKDIR /app
-COPY package.json /app
-
-RUN npm install
+WORKDIR /opt/app
 COPY . .
-EXPOSE 9999
+RUN npm install
 CMD ["npm", "start"]
+EXPOSE 9999
