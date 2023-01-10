@@ -1,14 +1,9 @@
 package netology.data;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.service.RandomService;
-import lombok.SneakyThrows;
-import lombok.Value;
-import lombok.val;
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.ScalarHandler;
 
-import java.sql.DriverManager;
+import lombok.Value;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;

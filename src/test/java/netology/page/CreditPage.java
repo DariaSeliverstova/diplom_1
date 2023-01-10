@@ -30,7 +30,7 @@ public class CreditPage {
     final private static SelenideElement buttonContinue = $(".form-field button");
 
 
-    public static void creditForm() {
+    public static void CreditForm() {
         headingBuyCredit.shouldBe(Condition.visible);
     }
 
