@@ -137,7 +137,7 @@ public class TestCard {
         orderRejectedId();
     }
 
-    //4.
+
     @Test
     void shouldNotBuyOnZeroCard() {
         String date = DataHelper.generateYear(2);
@@ -158,7 +158,6 @@ public class TestCard {
 
 
     }
-    //5.
 
     @Test
     void shouldNotBuyOnEmptyNumberOfCard() {
@@ -181,7 +180,7 @@ public class TestCard {
 
     }
 
-    //6.
+
 
     @Test
     void shouldNotBuyOnNotRegisteredCard() {
@@ -205,7 +204,7 @@ public class TestCard {
 
     }
 
-    //7.
+
     @Test
     void shouldNotBuyWithZeroMonth() {
         String date = DataHelper.generateYear(2);
@@ -227,7 +226,7 @@ public class TestCard {
 
 
     }
-    //8.
+
 
     @Test
     void shouldNotBuyWith13Month() {
@@ -251,7 +250,7 @@ public class TestCard {
 
     }
 
-    //9.
+
     @Test
     void shouldNotBuyWithEmptyMonth() {
         String date = DataHelper.generateYear(2);
@@ -274,7 +273,7 @@ public class TestCard {
 
     }
 
-    //10.
+
     @Test
     void shouldNotBuyWith1NumberOfMonth() {
         String date = DataHelper.generateYear(2);
@@ -297,7 +296,7 @@ public class TestCard {
 
     }
 
-    //11.
+
     @Test
     void shouldNotBuyWithLastYear() {
         String date = DataHelper.generateYear(-1);
@@ -320,7 +319,7 @@ public class TestCard {
 
     }
 
-    //12.
+
     @Test
     void shouldNotBuyWithEmptyYear() {
 
@@ -343,7 +342,7 @@ public class TestCard {
 
     }
 
-    //13.
+
     @Test
     void shouldNotBuyWithZeroYear() {
 
@@ -366,7 +365,7 @@ public class TestCard {
 
     }
 
-    //14.
+
     @Test
     void shouldNotBuyWith1Year() {
 
@@ -389,7 +388,7 @@ public class TestCard {
 
     }
 
-    //15.
+
     @Test
     void shouldNotBuyWithCyrillicNameOfHolder() {
 
@@ -412,7 +411,7 @@ public class TestCard {
 
     }
 
-    //16.
+
     @Test
     void shouldNotBuyWithSymbolNameOfHolder() {
 
@@ -434,7 +433,7 @@ public class TestCard {
 
     }
 
-    //17.
+
     @Test
     void shouldNotBuyWithNumberNameOfHolder() {
 
@@ -456,7 +455,7 @@ public class TestCard {
 
     }
 
-    //18.
+
     @Test
     void shouldNotBuyWithEmptyNameOfHolder() {
 
@@ -476,7 +475,7 @@ public class TestCard {
 
     }
 
-    //19.
+
     @Test
     void shouldNotBuyWith2NumbersOfCVC() {
 
@@ -499,7 +498,7 @@ public class TestCard {
 
     }
 
-    //20.
+
     @Test
     void shouldNotBuyWithZeroCVC() {
 
@@ -522,7 +521,7 @@ public class TestCard {
 
     }
 
-    //21.
+
     @Test
     void shouldNotBuyWithEmptyCVC() {
 

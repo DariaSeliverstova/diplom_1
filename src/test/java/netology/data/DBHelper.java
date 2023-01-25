@@ -8,6 +8,10 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import java.sql.DriverManager;
 
 public class DBHelper {
+    public static String dbUrl = "jdbc:mysql://localhost:3306/app";
+    public static String dbUser = "app";
+    public static String dbPass = "pass";
+
     @SneakyThrows
     public static String getPaymentStatus() {
         val sql = "SELECT status FROM payment_entity;";
@@ -15,9 +19,9 @@ public class DBHelper {
         String paymentStatus;
 
         try (
-                val conn = DriverManager.getConnection(System.getProperty("dbUrl"), System.getProperty("dbUser"), System.getProperty("dbPass")
-                );
-        ) {
+                val conn = DriverManager.getConnection(dbUrl, dbUser, dbPass)
+                )
+         {
             paymentStatus = runner.query(conn, sql, new ScalarHandler<>());
         }
         return paymentStatus;
@@ -30,8 +34,7 @@ public class DBHelper {
         String creditStatus;
 
         try (
-                val conn = DriverManager.getConnection(System.getProperty("dbUrl"), System.getProperty("dbUser"), System.getProperty("dbPass")
-                );
+                val conn = DriverManager.getConnection(dbUrl, dbUser, dbPass)
         ) {
             creditStatus = runner.query(conn, status, new ScalarHandler<>());
         }
@@ -46,8 +49,7 @@ public class DBHelper {
         long paymentId;
 
         try (
-                val conn = DriverManager.getConnection(System.getProperty("dbUrl"), System.getProperty("dbUser"), System.getProperty("dbPass")
-                );
+                val conn = DriverManager.getConnection(dbUrl, dbUser, dbPass)
         ) {
             paymentId = runner.query(conn, sql, new ScalarHandler<>());
         }
@@ -61,8 +63,7 @@ public class DBHelper {
         long creditId;
 
         try (
-                val conn = DriverManager.getConnection(System.getProperty("dbUrl"), System.getProperty("dbUser"), System.getProperty("dbPass")
-                );
+                val conn = DriverManager.getConnection(dbUrl, dbUser, dbPass)
         ) {
             creditId = runner.query(conn, sql, new ScalarHandler<>());
         }
@@ -76,8 +77,7 @@ public class DBHelper {
         long orderId;
 
         try (
-                val conn = DriverManager.getConnection(System.getProperty("dbUrl"), System.getProperty("dbUser"), System.getProperty("dbPass")
-                );
+                val conn = DriverManager.getConnection(dbUrl, dbUser, dbPass)
         ) {
             orderId = runner.query(conn, sql, new ScalarHandler<>());
         }
@@ -93,8 +93,7 @@ public class DBHelper {
         var sqlDeleteAllPaymentRequest = "DELETE FROM payment_entity;";
 
         try (
-                var conn = DriverManager.getConnection(System.getProperty("dbUrl"), System.getProperty("dbUser"), System.getProperty("dbPass")
-                );
+                val conn = DriverManager.getConnection(dbUrl, dbUser, dbPass)
         ) {
             runner.update(conn, sqlDeleteAllOrders);
             runner.update(conn, sqlDeleteAllCreditRequest);

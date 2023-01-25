@@ -19,11 +19,11 @@ services:
     volumes:
       - ./data:/var/lib/postgresql
     environment:
-      POSTGRES_DB: app
+      POSTGRES_DB: db
       POSTGRES_USER: app
       POSTGRES_PASSWORD: pass
   node-app:
     build: ./gate-simulator
-    image: gate-simulator:1.0
+    image: node-app:1.0
     ports:
       - '9999:9999'

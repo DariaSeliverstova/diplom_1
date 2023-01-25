@@ -143,9 +143,9 @@ public class CreditTestCard {
                 year = date,
                 holder = DataHelper.generateHolder("En"),
                 cvc = "123",
-                shortCardNumber = "0000 0000 0000 0000";
+                zeroCardNumber = "0000 0000 0000 0000";
 
-        var card = DataHelper.setCard(shortCardNumber, month, year, holder, cvc);
+        var card = DataHelper.setCard(zeroCardNumber, month, year, holder, cvc);
         StartingPage.selectCreditForm();
 
         creditPage.cleanFields();
