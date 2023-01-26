@@ -6,10 +6,13 @@ import netology.data.DBHelper;
 import netology.data.DataHelper;
 import netology.page.CreditPage;
 import netology.page.StartingPage;
+import netology.util.ScreenShooterReportPortalExtension;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static com.codeborne.selenide.Selenide.open;
 
+@ExtendWith({ScreenShooterReportPortalExtension.class})
 public class CreditTestCard {
     @BeforeAll
     static void setUpAll() {
