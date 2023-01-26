@@ -20,6 +20,8 @@ allure {
 }
 
 repositories {
+    mavenLocal()
+
     mavenCentral()
 }
 
@@ -42,6 +44,11 @@ dependencies {
     implementation 'com.github.javafaker:javafaker:1.0.2'
 
     testImplementation 'io.qameta.allure:allure-selenide:2.19.0'
+
+    implementation 'com.epam.reportportal:agent-java-junit5:5.0.0'
+    implementation 'com.epam.reportportal:logger-java-logback:5.0.2'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
 }
 
 test {
@@ -52,4 +59,7 @@ test {
     systemProperty 'dbUrl', System.getProperty('dbUrl')
     systemProperty 'dbUser', System.getProperty('dbUser')
     systemProperty 'dbPass', System.getProperty('dbPass')
+
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
+    testLogging.showStandardStreams = true
 }
